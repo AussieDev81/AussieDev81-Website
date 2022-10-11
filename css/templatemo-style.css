@@ -1,6 +1,7 @@
 :root {
   --header-height: 350px;
   --header-padding: 160px;
+  --header-opacity: .75;
 }
 
 body
@@ -10,21 +11,37 @@ body
 		font-family: 'Montserrat', sans-serif;
     font-weight: 400;
 	}
-
+@media (max-width: 992px) {
+  #home {
+      padding-top: 40px !important;
+    }
+    #home h1,
+    #home h3 {
+      line-height: 18px !important;
+      font-size: 28px !important;
+    }
+    #home h3 {
+      color: #ffa500;
+      
+    }
+}
 @media (min-width: 768px) {
   .container {
     width: 700px;
   }
+  
 }
 @media (min-width: 992px) {
   .container {
     width: 900px;
   }
+    
 }
 @media (min-width: 1200px) {
   .container {
     width: 1000px;
   }
+    
 }
 
 .mt20 {
@@ -74,11 +91,15 @@ img {
 }
 
 /* navigation */
-
+.navbar-header span {
+  font-size: 28px;
+  color: #fff;
+  vertical-align: -webkit-baseline-middle;
+}
 .navbar-default {
     background: #202020;
     border: none;
-    border-left: 6px solid #d54ab6;
+    border-left: 6px solid #ffa500;
     padding-right: 40px;
     margin: 0 !important;
     position: relative;
@@ -107,14 +128,14 @@ img {
   	background-color: transparent;
 }
 .navbar-default .navbar-toggle {
-  	background: #d54ab6;
+  	background: #ffa500;
   	border-radius: 0px;
    	border: none;
    	margin-top: 20px;
    	margin-bottom: 30px;
 }
 .navbar-default .navbar-toggle .icon-bar {
-    background: #fff;
+    background: #202020;
     border-color: transparent;
 }
 .navbar-default .navbar-toggle:hover,
@@ -122,23 +143,27 @@ img {
   background-color: transparent 
 }
 
+
 .active {
 	background: #333;
 }
 
 /* home section */
 #home {
-  background: url('../images/home-bg.jpg') no-repeat;
+  background: url('../images/software-developer-6521720_1920.jpg') no-repeat;
   background-size: cover;
   background-position: center;
   min-height: 500px;
-  padding-top: 180px;
+  padding-top: 85px;
   padding-bottom: 100px;
 }
 #home h1,
 #home h3 {
   line-height: 30px;
   font-size: 40px;
+}
+#home h3 {
+  color: #ffa500;
 }
 
 /* divider section */
@@ -185,6 +210,7 @@ img {
   background-position: center;
   min-height: var(--header-height);
   padding-top: var(--header-padding);
+  opacity: var(--header-opacity);
 }
 #about {
   padding-top: 60px;
@@ -249,6 +275,7 @@ img {
   background-position: center;
   min-height: var(--header-height);
   padding-top: var(--header-padding);
+  opacity: var(--header-opacity);
 }
 #portfolio {
   text-align: center;
@@ -282,6 +309,7 @@ img {
   background-position: center;
   min-height: var(--header-height);
   padding-top: var(--header-padding);
+  opacity: var(--header-opacity);
 }
 #contact {
   padding-top: 60px;
@@ -328,6 +356,12 @@ footer {
   background: #1c1c1c;
   padding-top: 60px;
   padding-bottom: 60px;
+}
+footer h3 , a{
+  color: #fff;
+  margin: 20px 0px 10px;;
+    font-weight: bold;
+  padding-bottom: 10px;
 }
 footer .fa {
 	font-size: 18px;
