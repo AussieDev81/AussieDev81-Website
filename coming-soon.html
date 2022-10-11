@@ -1,0 +1,34 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="color-scheme" content="dark">
+    <style>
+        :root {
+            --small-text: 28px;
+            --large-text: 40px;
+        }
+        .centered {
+            text-align: center;
+            line-height: 95vh;
+        }
+        @media screen and (min-width: 480px) {
+            .centered {
+                font-size: var(--large-text);
+            }
+        }
+        @media screen and (max-width: 479px) {
+            .centered {
+                font-size: var(--small-text);
+            }
+        }
+    </style>
+    <title>Coming Soon</title>
+</head>
+<body>
+    <div class="centered">
+        Coming Soon...
+    </div>
+</body>
+</html>
