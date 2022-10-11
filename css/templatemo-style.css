@@ -1,10 +1,7 @@
-/*
-
-OneTel Template
-
-http://www.templatemo.com/tm-468-onetel
-
-*/
+:root {
+  --header-height: 350px;
+  --header-padding: 160px;
+}
 
 body
 	{
@@ -186,8 +183,8 @@ img {
   background: url('../images/about-header.jpg') no-repeat;
   background-size: cover;
   background-position: center;
-  min-height: 500px;
-  padding-top: 160px;
+  min-height: var(--header-height);
+  padding-top: var(--header-padding);
 }
 #about {
   padding-top: 60px;
@@ -250,8 +247,8 @@ img {
   background: url('../images/portfolio-header.jpg') no-repeat;
   background-size: cover;
   background-position: center;
-  min-height: 500px;
-  padding-top: 160px;
+  min-height: var(--header-height);
+  padding-top: var(--header-padding);
 }
 #portfolio {
   text-align: center;
@@ -283,8 +280,8 @@ img {
   background: url('../images/contact-header.jpg') no-repeat;
   background-size: cover;
   background-position: center;
-  min-height: 500px;
-  padding-top: 160px;
+  min-height: var(--header-height);
+  padding-top: var(--header-padding);
 }
 #contact {
   padding-top: 60px;
