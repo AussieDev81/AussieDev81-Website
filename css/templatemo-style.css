@@ -359,8 +359,7 @@ footer {
 }
 footer h3 , a{
   color: #fff;
-  margin: 20px 0px 10px;;
-    font-weight: bold;
+  font-weight: bold;
   padding-bottom: 10px;
 }
 footer .fa {
@@ -426,7 +425,7 @@ footer a:hover {
   
 }
 .social-icons li a:hover {
-  background: #d54ab6;
+  background: #ffa500;
   color: #fff;
 }
 
