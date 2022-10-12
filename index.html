@@ -38,9 +38,6 @@
 		</div>
 	</div>
 
-<div id="readme-block">
-</div>
-
 	<!-- divider section -->
 	<div class="divider">
 		<div class="container">
@@ -72,8 +69,15 @@
 		</div>
 	</div>
 
+	<!-- GitHub stats dashboard -->
+	<div class="container" id="github-stats" >
+		<h2>Real-time GitHub Activity 😱</h2>
+		<div id="github-block"></div>
+	</div>
+	
+	<div id="recent-repos"></div>
 	<!-- about section -->
-	<div id="about">
+	<!-- <div id="about">
 		<div class="container">
 			<div class="row">
 				<div class="col-md-6 col-sm-12">
@@ -89,7 +93,7 @@
 				</div>
 			</div>
 		</div>
-	</div>
+	</div> -->
 
 	<!-- portfolio section -->
 	<div id="portfolio">
@@ -158,7 +162,6 @@
 		document.getElementById("navigation").innerHTML = navContent("Home");
 		document.getElementById("footer").innerHTML = footerContent();
 		document.getElementById("copyright").innerHTML = copyrightContent();
-		document.getElementById("readme-block").innerHTML = readme();
 	</script>
 
 </body>

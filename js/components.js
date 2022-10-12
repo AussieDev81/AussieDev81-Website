@@ -33,6 +33,76 @@ const headerContent = () => {
     `;
 };
 
+
+/**
+ * Fetches the README document from GitHub repository and shows the current stats for both AussieDev81 and nathansnow1981 accounts
+ */
+window.ready = fetch("https://api.github.com/repos/AussieDev81/AussieDev81_Website/readme?ref=dev", {
+	accept: "application/vnd.github.html+json",
+})
+	.then((response) => response.json())
+	.then((data) => (document.getElementById("github-block").innerHTML = atob(data.content)))
+	.catch((error) => console.error(error));
+
+
+/**
+ * Fetches all GitHub repos from both the AussieDev81 and nathansnow1981 accounts, merges and sorts the repos based on the
+ * date they were last updated, then filters only the 5 most recently updated repos.
+ * The most recently updated repos are then added to the 'recent-repos' table in index.html
+ */
+const doPromiseAll = async () => {
+	//Define both GitHub repository api calls
+	let ad81Data = await fetch("https://api.github.com/users/AussieDev81/repos");
+	let ns1981Data = await fetch("https://api.github.com/users/nathansnow1981/repos");
+
+	//Call both APIs asynchronously
+	Promise.all([ad81Data, ns1981Data])
+		.then((repos) => Promise.all(repos.map((repo) => repo.json())))
+		.then((repos) => {
+			//Combine all repos into one array
+			let allRepos = repos[0].concat(repos[1]);
+			//Sort repos by date last updated and keep only the most recent 5
+			allRepos = allRepos.sort((a, b) => new Date(b.pushed_at) - new Date(a.pushed_at)).slice(0, 5);
+
+			//Define table rows using the 5 recent repositories
+			let tableRows = "";
+			allRepos.forEach((repo) => {
+				tableRows += `
+		<tr>
+			<td>${new Date(repo.pushed_at).toLocaleDateString("en-AU")}</td>
+			<td>${repo.name}</td>
+			<td><a href='${repo.html_url}' target='_blank' title='Visit ${repo.name}'>${repo.html_url}</a></td>
+		</tr>
+		`;
+			});
+
+			//Create table and insert the predefined table rows
+			const recentRepos =
+				`
+			<h2>5 Most Recent Repos</h2>
+			<table>
+			<thead>
+				<tr>
+					<th>Last Updated</th>
+					<th>Repository Name</th>
+					<th>URL</th>
+				</tr>
+			</thead>
+			<tbody>
+			` +
+				tableRows +
+				`
+			</tbody>
+			</table>
+		`;
+
+			document.getElementById("recent-repos").innerHTML = recentRepos;
+		});
+};
+
+window.ready = doPromiseAll();
+
+
 //Copyright notice
 const copyrightContent = () => {
 	return `

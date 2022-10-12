@@ -188,9 +188,39 @@ img {
   color: var(--site-accent-color);
 }
 
-#readme-block {
-  margin:auto;
-  max-width: 1100px;
+#github-stats {
+  margin: 40px auto 40px auto;
+}
+
+#github-stats h2, p {
+  color: var(--common-white);
+  text-align: center;
+}
+.container #github-block {
+  margin: 20px 0 20px 0;
+}
+#recent-repos table {
+  margin: auto;
+  /* width: 500px; */
+  border: 1px solid #1c1c1c;
+  color: var(--common-white);
+}
+#recent-repos table th, td {
+  padding: 0 10px 0 10px;
+  line-height: 28px;
+}
+
+#recent-repos thead, tr:nth-child(even) {
+  background-color: #1c1c1c;
+}
+
+#recent-repos h2 {
+  padding-bottom: 20px;
+  text-align: center;
+}
+
+#recent-repos a {
+  font-weight: normal;
 }
 
 /* divider section */
