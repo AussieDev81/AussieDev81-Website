@@ -21,7 +21,7 @@
     <br/>
     <br/>
 <div align="center">
-    <img width="25%" align="left" height="auto" src="https://github-readme-stats.vercel.app/api?username=AussieDev81&theme=blue-green" title="https://github.com/nathansnow1981" >
-    <img width="30%" align="center" height="auto" src="https://github-readme-stats.vercel.app/api/top-langs/?username=AussieDev81&theme=blue-green" title="https://github.com/nathansnow1981" >
-    <img width="25%" align="right" height="auto" src="https://github-readme-streak-stats.herokuapp.com/?user=AussieDev81&theme=blue-green" title="https://github.com/nathansnow1981" >
+    <img width="25%" align="left" height="auto" src="https://github-readme-stats.vercel.app/api?username=nathansnow1981&theme=blue-green" title="https://github.com/nathansnow1981" >
+    <img width="30%" align="center" height="auto" src="https://github-readme-stats.vercel.app/api/top-langs/?username=nathansnow1981&theme=blue-green" title="https://github.com/nathansnow1981" >
+    <img width="25%" align="right" height="auto" src="https://github-readme-streak-stats.herokuapp.com/?user=nathansnow1981&theme=blue-green" title="https://github.com/nathansnow1981" >
 </div>
