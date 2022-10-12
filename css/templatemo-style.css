@@ -188,6 +188,11 @@ img {
   color: var(--site-accent-color);
 }
 
+#readme-block {
+  margin:auto;
+  max-width: 1100px;
+}
+
 /* divider section */
 .divider {
   color: var(--common-white);
