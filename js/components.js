@@ -91,7 +91,8 @@ const doPromiseAll = async () => {
 		});
 };
 
-window.ready = doPromiseAll();
+//Todo: Reactivate after cleaning up repos
+//window.ready = doPromiseAll();
 
 
 //Copyright notice
