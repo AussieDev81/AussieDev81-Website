@@ -133,10 +133,10 @@ const footerContent = () => {
 
 				<div class="col-md-4 col-sm-6">
 					<h3>Menu</h3>
-					<p><a href="index.html">Home</a></p>
-					<p><a href="about.html">About</a></p>
-					<p><a href="portfolio.html">Portfolio</a></p>
-					<p><a href="contact.html">Contact</a></p>
+					<p><a href="/">Home</a></p>
+					<p><a href="about">About</a></p>
+					<p><a href="portfolio">Portfolio</a></p>
+					<p><a href="contact">Contact</a></p>
 				</div>
 
 				<div class="col-md-4 col-sm-6">
