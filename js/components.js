@@ -22,17 +22,6 @@ const navContent = (page) => {
 	`;
 };
 
-//Header banner section
-const headerContent = () => {
-	return `
-        <div class="container">
-            <div class="row">
-                <div class="col-md-12 col-sm-12"></div>
-            </div>
-        </div>
-    `;
-};
-
 
 /**
  * Fetches the README document from GitHub repository and shows the current stats for both AussieDev81 and nathansnow1981 accounts
@@ -80,20 +69,22 @@ const doPromiseAll = async () => {
 			const recentRepos =
 				`
 			<h2>5 Most Recent Repos</h2>
-			<table>
-			<thead>
-				<tr>
-					<th>Last Updated</th>
-					<th>Repository Name</th>
-					<th>URL</th>
-				</tr>
-			</thead>
-			<tbody>
-			` +
-				tableRows +
-				`
-			</tbody>
-			</table>
+			<div id="table-box">
+				<table>
+				<thead>
+					<tr>
+						<th>Last Updated</th>
+						<th>Repository Name</th>
+						<th>URL</th>
+					</tr>
+				</thead>
+				<tbody>
+				` +
+					tableRows +
+					`
+				</tbody>
+				</table>
+			</div>
 		`;
 
 			document.getElementById("recent-repos").innerHTML = recentRepos;

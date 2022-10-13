@@ -4,6 +4,6 @@ $("#portfolio a").nivoLightbox({
 });
 
 // HIDE MOBILE MENU AFTER CLICKING ON A LINK
-$(".navbar-collapse a").click(function () {
-	$(".navbar-collapse").collapse("hide");
-});
+// $(".navbar-collapse a").click(function () {
+// 	$(".navbar-collapse").collapse("hide");
+// });
