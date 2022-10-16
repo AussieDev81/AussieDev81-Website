@@ -148,3 +148,21 @@ const footerContent = () => {
 		</div>
 	`;
 };
+
+
+/**
+ * Runs when the user is scrolling the page and shows the "scroll to top" button if page is scrolled past a predefined limit
+ */
+window.onscroll = () => {
+	const scrollLimit = 150;
+	let scrollBtn = document.getElementById("scroll-btn");
+	let chromiumTop = document.body.scrollTop;
+	let safariTop = document.documentElement.scrollTop;
+	scrollBtn.style.display = (chromiumTop > scrollLimit || safariTop > scrollLimit) ? "block" : "none";
+};
+
+
+/**
+ * Returns to the top of the current page, using a smooth animation
+ */
+const scrollUp = () => window.scrollTo({ top: 0, behavior: "smooth" });

@@ -24,7 +24,7 @@
 	<meta property="og:title" content="AussieDev81">
 	<meta property="og:description" content="Software Engineer">
 	<meta property="og:image" content="/images/developer.jpg">
-	
+
 	<!-- Twitter Meta Tags -->
 	<meta name="twitter:card" content="summary_large_image">
 	<meta property="twitter:domain" content="aussiedev81.com">
@@ -44,7 +44,7 @@
 	<script rel="preconnect" src="https://kit.fontawesome.com/068920eb91.js" crossorigin="anonymous"></script>
 </head>
 
-<body>
+<body onload="fetchTopFiveRepos(); fetchReadme()">
 
 	<!-- navigation -->
 	<div class="container" id="navigation"></div>
@@ -72,7 +72,7 @@
 						<h2>Developer</h2>
 						<p>
 							Java &check; &nbsp; C# &check; &nbsp; PHP &check; &nbsp; JavaScript &check; &nbsp;
-							Kotlin &check; &nbsp; Spring Boot &check; &nbsp; Thymeleaf &check; &nbsp; 
+							Kotlin &check; &nbsp; Spring Boot &check; &nbsp; Thymeleaf &check; &nbsp;
 							React &check; &nbsp; &nbsp; HTML &check; &nbsp; CSS &check; &nbsp;
 							Wordpress &check; &nbsp; MySQL &check;
 						</p>
@@ -83,10 +83,10 @@
 						<i class="fa fa-solid fa-people-group"></i>
 						<h2>Contributor</h2>
 						<p>
-							Remote and on-site work &check;<br/>
-							Open source contributions &check;<br/>
-							Tutoring and mentoring &check;<br/>
-							Community contributions &check;<br/>
+							Remote and on-site work &check;<br />
+							Open source contributions &check;<br />
+							Tutoring and mentoring &check;<br />
+							Community contributions &check;<br />
 						</p>
 					</div>
 				</div>
@@ -95,11 +95,11 @@
 						<i class="fa fa-solid fa-clipboard-check"></i>
 						<h2>Problem Solver</h2>
 						<p>
-							Tailored solutions &check;<br/>
-							Effective & efficient systems &check;<br/>
-							Robust logic &check;<br/>
-							Critical Thinker &check;<br/>
-						
+							Tailored solutions &check;<br />
+							Effective & efficient systems &check;<br />
+							Robust logic &check;<br />
+							Critical Thinker &check;<br />
+
 						</p>
 					</div>
 				</div>
@@ -108,13 +108,13 @@
 	</div>
 
 	<!-- GitHub stats dashboard -->
-	<div class="container" id="github-stats" >
+	<div class="container" id="github-stats">
 		<h2>Real-time GitHub Activity</h2>
 		<div id="github-block"></div>
 	</div>
-	
+
 	<div id="recent-repos"></div>
-	
+
 	<!-- about section -->
 	<!-- <div id="about">
 		<div class="container">
@@ -189,6 +189,11 @@
 
 	<!-- copyright section -->
 	<div class="copyright" id="copyright"></div>
+
+	<!-- scroll to top button -->
+	<button class="scroll-up-btn" id="scroll-btn" type="button" onclick="scrollUp()">
+		<i class="fa-solid fa-jet-fighter-up fa-2xl"></i>Top
+	</button>
 
 	<!-- javascript js -->
 	<script src="js/jquery.js"></script>
