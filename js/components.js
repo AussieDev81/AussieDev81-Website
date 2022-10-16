@@ -98,18 +98,18 @@ const copyrightContent = () => {
 	    <div class="container">
 			<div class="row">
 				<div class="col-md-6 col-sm-6">
-					<p>Copyright &copy; AussieDev81
-						<script>document.write(new Date().getFullYear())</script> - All Rights Reserved
+					<p>Copyright &copy; 
+						${new Date().getFullYear()} - AussieDev81 - All Rights Reserved
 					</p>
 				</div>
 				<div class="col-md-6 col-sm-6">
 					<ul class="social-icons">
-						<li><a href="https://github.com/AussieDev81" class="fa-brands fa-github" aria-label="GitHub social link"></a></li>
-						<li><a href="https://twitter.com/AussieDev81" class="fa-brands fa-twitter" aria-label="Twitter social link"></a></li>
+						<li><a href="https://github.com/AussieDev81" class="fa-brands fa-github" aria-label="GitHub social link" target="_blank"></a></li>
+						<li><a href="https://twitter.com/AussieDev81" class="fa-brands fa-twitter" aria-label="Twitter social link" target="_blank"></a></li>
 						<li><a href="https://www.youtube.com/channel/UCfzYf3DeS6W2hpgXqniOjqQ"
-								class="fa-brands fa-youtube" aria-label="YouTube social link"></a></li>
-						<li><a href="https://discord.gg/vXus9NrC3P" class="fa-brands fa-discord" aria-label="Discord social link"></a></li>
-						<li><a href="mailto:info@aussiedev81.com&subject=Enquiry" class="fa fa-envelope" aria-label="Email link"></a></li>
+								class="fa-brands fa-youtube" aria-label="YouTube social link" target="_blank"></a></li>
+						<li><a href="https://discord.gg/vXus9NrC3P" class="fa-brands fa-discord" aria-label="Discord social link" target="_blank"></a></li>
+						<li><a href="mailto:info@aussiedev81.com&subject=Enquiry" class="fa fa-envelope" aria-label="Email link" target="_blank"></a></li>
 					</ul>
 				</div>
 			</div>
