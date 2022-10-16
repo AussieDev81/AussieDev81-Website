@@ -26,7 +26,7 @@ const navContent = (page) => {
 /**
  * Fetches the README document from GitHub repository and shows the current stats for both AussieDev81 and nathansnow1981 accounts
  */
-window.ready = fetch("https://api.github.com/repos/AussieDev81/AussieDev81_Website/readme", {
+const fetchReadme = () => fetch("https://api.github.com/repos/AussieDev81/AussieDev81_Website/readme", {
 	accept: "application/vnd.github.html+json",
 })
 	.then((response) => response.json())
@@ -39,7 +39,7 @@ window.ready = fetch("https://api.github.com/repos/AussieDev81/AussieDev81_Websi
  * date they were last updated, then filters only the 5 most recently updated repos.
  * The most recently updated repos are then added to the 'recent-repos' table in index.html
  */
-const doPromiseAll = async () => {
+const fetchTopFiveRepos = async () => {
 	//Define both GitHub repository api calls
 	let ad81Data = await fetch("https://api.github.com/users/AussieDev81/repos");
 	let ns1981Data = await fetch("https://api.github.com/users/nathansnow1981/repos");
@@ -90,9 +90,6 @@ const doPromiseAll = async () => {
 			document.getElementById("recent-repos").innerHTML = recentRepos;
 		});
 };
-
-//Todo: Reactivate after cleaning up repos
-//window.ready = doPromiseAll();
 
 
 //Copyright notice
