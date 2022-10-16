@@ -107,12 +107,12 @@ const copyrightContent = () => {
 				</div>
 				<div class="col-md-6 col-sm-6">
 					<ul class="social-icons">
-						<li><a href="https://github.com/AussieDev81" class="fa-brands fa-github"></a></li>
-						<li><a href="https://twitter.com/AussieDev81" class="fa-brands fa-twitter"></a></li>
+						<li><a href="https://github.com/AussieDev81" class="fa-brands fa-github" name="GitHub social link"></a></li>
+						<li><a href="https://twitter.com/AussieDev81" class="fa-brands fa-twitter" name="Twitter social link"></a></li>
 						<li><a href="https://www.youtube.com/channel/UCfzYf3DeS6W2hpgXqniOjqQ"
-								class="fa-brands fa-youtube"></a></li>
-						<li><a href="https://discord.gg/vXus9NrC3P" class="fa-brands fa-discord"></a></li>
-						<li><a href="mailto:info@aussiedev81.com&subject=Enquiry" class="fa fa-envelope"></a></li>
+								class="fa-brands fa-youtube" name="YouTube social link"></a></li>
+						<li><a href="https://discord.gg/vXus9NrC3P" class="fa-brands fa-discord" name="Discord social link"></a></li>
+						<li><a href="mailto:info@aussiedev81.com&subject=Enquiry" class="fa fa-envelope" name="Email link"></a></li>
 					</ul>
 				</div>
 			</div>
