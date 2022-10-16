@@ -156,8 +156,8 @@ const footerContent = () => {
 window.onscroll = () => {
 	const scrollLimit = 150;
 	let scrollBtn = document.getElementById("scroll-btn");
-	let chromiumTop = document.body.scrollTop;
-	let safariTop = document.documentElement.scrollTop;
+	let chromiumTop = document.documentElement.scrollTop;
+	let safariTop = document.body.scrollTop;
 	scrollBtn.style.display = (chromiumTop > scrollLimit || safariTop > scrollLimit) ? "block" : "none";
 };
 
