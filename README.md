@@ -1,8 +1,8 @@
 <div align="center"><h3>Stats for AussieDev81</h3></div>
 <div align="center">
-    <img width="25%" height="auto" align="left" src="http://github-profile-summary-cards.vercel.app/api/cards/repos-per-language?username=AussieDev81&theme=github_dark" alt="Top languages by repo for AussieDev81">
-    <img width="40%" height="auto" align="center" src="http://github-profile-summary-cards.vercel.app/api/cards/profile-details?username=AussieDev81&theme=github_dark" alt="Activity summary for AussieDev81">
-    <img width="25%" height="auto" align="right" src="http://github-profile-summary-cards.vercel.app/api/cards/most-commit-language?username=AussieDev81&theme=github_dark" alt="Top languages by commit for AussieDev81">
+    <img width="25%" height="auto" align="left" src="https://github-profile-summary-cards.vercel.app/api/cards/repos-per-language?username=AussieDev81&theme=github_dark" alt="Top languages by repo for AussieDev81">
+    <img width="40%" height="auto" align="center" src="https://github-profile-summary-cards.vercel.app/api/cards/profile-details?username=AussieDev81&theme=github_dark" alt="Activity summary for AussieDev81">
+    <img width="25%" height="auto" align="right" src="https://github-profile-summary-cards.vercel.app/api/cards/most-commit-language?username=AussieDev81&theme=github_dark" alt="Top languages by commit for AussieDev81">
 </div>
     <br/>
     <br/>
@@ -16,9 +16,9 @@
 <br/>
 <div align="center"><h3>Stats for nathansnow1981</h3></div>
 <div align="center">
-    <img width="25%" height="auto" align="left" src="http://github-profile-summary-cards.vercel.app/api/cards/repos-per-language?username=nathansnow1981&theme=github_dark" alt="Top languages by repo for nathansnow1981">
-    <img width="40%" height="auto" align="center" src="http://github-profile-summary-cards.vercel.app/api/cards/profile-details?username=nathansnow1981&theme=github_dark" alt="Activity summary for nathansnow1981">
-    <img width="25%" height="auto" align="right" src="http://github-profile-summary-cards.vercel.app/api/cards/most-commit-language?username=nathansnow1981&theme=github_dark" alt="Top languages by commit for nathansnow1981">
+    <img width="25%" height="auto" align="left" src="https://github-profile-summary-cards.vercel.app/api/cards/repos-per-language?username=nathansnow1981&theme=github_dark" alt="Top languages by repo for nathansnow1981">
+    <img width="40%" height="auto" align="center" src="https://github-profile-summary-cards.vercel.app/api/cards/profile-details?username=nathansnow1981&theme=github_dark" alt="Activity summary for nathansnow1981">
+    <img width="25%" height="auto" align="right" src="https://github-profile-summary-cards.vercel.app/api/cards/most-commit-language?username=nathansnow1981&theme=github_dark" alt="Top languages by commit for nathansnow1981">
 </div>
     <br/>
     <br/>
