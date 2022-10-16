@@ -26,7 +26,7 @@ const navContent = (page) => {
 /**
  * Fetches the README document from GitHub repository and shows the current stats for both AussieDev81 and nathansnow1981 accounts
  */
-window.ready = fetch("https://api.github.com/repos/AussieDev81/AussieDev81_Website/readme?ref=dev", {
+window.ready = fetch("https://api.github.com/repos/AussieDev81/AussieDev81_Website/readme", {
 	accept: "application/vnd.github.html+json",
 })
 	.then((response) => response.json())
@@ -107,12 +107,12 @@ const copyrightContent = () => {
 				</div>
 				<div class="col-md-6 col-sm-6">
 					<ul class="social-icons">
-						<li><a href="https://github.com/AussieDev81" class="fa-brands fa-github" name="GitHub social link"></a></li>
-						<li><a href="https://twitter.com/AussieDev81" class="fa-brands fa-twitter" name="Twitter social link"></a></li>
+						<li><a href="https://github.com/AussieDev81" class="fa-brands fa-github" aria-label="GitHub social link"></a></li>
+						<li><a href="https://twitter.com/AussieDev81" class="fa-brands fa-twitter" aria-label="Twitter social link"></a></li>
 						<li><a href="https://www.youtube.com/channel/UCfzYf3DeS6W2hpgXqniOjqQ"
-								class="fa-brands fa-youtube" name="YouTube social link"></a></li>
-						<li><a href="https://discord.gg/vXus9NrC3P" class="fa-brands fa-discord" name="Discord social link"></a></li>
-						<li><a href="mailto:info@aussiedev81.com&subject=Enquiry" class="fa fa-envelope" name="Email link"></a></li>
+								class="fa-brands fa-youtube" aria-label="YouTube social link"></a></li>
+						<li><a href="https://discord.gg/vXus9NrC3P" class="fa-brands fa-discord" aria-label="Discord social link"></a></li>
+						<li><a href="mailto:info@aussiedev81.com&subject=Enquiry" class="fa fa-envelope" aria-label="Email link"></a></li>
 					</ul>
 				</div>
 			</div>
