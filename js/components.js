@@ -26,7 +26,7 @@ const navContent = (page) => {
 /**
  * Fetches the README document from GitHub repository and shows the current stats for both AussieDev81 and nathansnow1981 accounts
  */
-const fetchReadme = () => fetch("https://api.github.com/repos/AussieDev81/AussieDev81_Website/readme", {
+const fetchReadme = () => fetch("https://api.github.com/repos/AussieDev81/AussieDev81-Website/readme", {
 	accept: "application/vnd.github.html+json",
 })
 	.then((response) => response.json())
