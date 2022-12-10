@@ -631,3 +631,14 @@ footer a:hover {
   background-color: rgba(94, 94, 94, 0.75);
   transform: scale(1.3);/* Grow to 130% */
 }
+
+.submit-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+}
+/* Google reCaptcha*/
+.g-recaptcha {
+  margin-bottom: 2rem;
+}

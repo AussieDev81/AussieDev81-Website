@@ -42,6 +42,7 @@
 
 	<!-- JavaScript dependencies -->
 	<script rel="preconnect" src="https://kit.fontawesome.com/068920eb91.js" crossorigin="anonymous"></script>
+	<script src="https://www.google.com/recaptcha/api.js" async defer></script>
 </head>
 
 <body>
@@ -72,16 +73,17 @@
 						<div class="row">
 							<div class="col-md-6 col-sm-6">
 								<label for="name">NAME</label>
-								<input name="name" type="text" class="form-control" id="name">
+								<input name="name" type="text" class="form-control" id="name" required>
 								<label for="email">EMAIL</label>
-								<input name="email" type="email" class="form-control" id="email">
+								<input name="email" type="email" class="form-control" id="email" required>
 							</div>
 							<div class="col-md-6 col-sm-6">
 								<label for="message">MESSAGE</label>
-								<textarea name="message" rows="7" class="form-control" id="message"></textarea>
+								<textarea name="message" rows="7" class="form-control" id="message" required></textarea>
 							</div>
 						</div>
-						<div class="row col-12 text-center">
+						<div class="row col-12 submit-box">
+							<div class="g-recaptcha" data-sitekey="6LelsmojAAAAAIfCkSRGGgDkF5C0gfPlBrw1pinV" data-theme="dark"></div>
 							<input type="submit" id="send-btn" class="btn btn-default" value="Send Email"></input>
 						</div>
 					</form>
@@ -123,23 +125,34 @@
 			.addEventListener('submit', function (event) {
 				event.preventDefault();
 
-				btn.value = 'Sending...';
+				//Get reCaptcha response 
+				let response = grecaptcha.getResponse();
 
-				const serviceID = 'default_service';
-				const templateID = 'template_cnr84vj';
+				if (response.length == 0) {
+					//User not validated
+					alert("Please verify that are not a robot")
+				}
+				else {
+					//User validated
 
-				const successMessage = `Thanks ${this.name.value}, we have received your email and will get back to you at ${this.email.value}`;
+					const serviceID = 'default_service';
+					const templateID = 'template_cnr84vj';
 
-				emailjs.sendForm(serviceID, templateID, this)
-					.then(() => {
-						btn.value = 'Send Email';
-						alert(successMessage);
-						window.location.reload();
-						window.scrollTo(0, 0);
-					}, (err) => {
-						btn.value = 'Send Email';
-						alert(JSON.stringify(err));
-					});
+					btn.value = 'Sending...';
+
+					const successMessage = `Thanks ${this.name.value}, we have received your email and will get back to you at ${this.email.value}`;
+
+					emailjs.sendForm(serviceID, templateID, this)
+						.then(() => {
+							btn.value = 'Send Email';
+							alert(successMessage);
+							window.location.reload();
+							window.scrollTo(0, 0);
+						}, (err) => {
+							btn.value = 'Send Email';
+							alert(JSON.stringify(err));
+						});
+				}
 			});
 	</script>
 
