@@ -14,7 +14,7 @@ const navContent = (page) => {
 				<ul class="nav navbar-nav navbar-right">
 					<li><a href="/" 	 ${page.toUpperCase() === "HOME" ? 'class="active"' : ""} 	   >HOME</a></li>
 					<li><a href="about" 	 ${page.toUpperCase() === "ABOUT" ? 'class="active"' : ""}	   >ABOUT</a></li>
-					<li><a href="portfolio" ${page.toUpperCase() === "PORTFOLIO" ? 'class="active"' : ""} >PORTFOLIO</a></li>
+					<li><a href="https://projects.aussiedev81.com" >PORTFOLIO</a></li>
 					<li><a href="contact" 	 ${page.toUpperCase() === "CONTACT" ? 'class="active"' : ""}   >CONTACT</a></li>
 				</ul>
 			</div>
@@ -132,9 +132,12 @@ const footerContent = () => {
 				<div class="col-md-4 col-sm-6">
 					<h3>Menu</h3>
 					<p><a href="/">Home</a></p>
-					<p><a href="about">About</a></p>
-					<p><a href="portfolio">Portfolio</a></p>
-					<p><a href="contact">Contact</a></p>
+					<p><a href="/about">About</a></p>
+					<p><a href="https://projects.aussiedev81.com/">Portfolio</a></p>
+					<p><a href="/contact">Contact</a></p>
+					<p><a href="https://projects.aussiedev81.com/">Project Portal</a></p>
+					<p><a href="https://projects.aussiedev81.com/projects">Projects</a></p>
+					<p><a href="https://projects.aussiedev81.com/boredom">Boredom Busters</a></p>
 				</div>
 
 				<div class="col-md-4 col-sm-6">

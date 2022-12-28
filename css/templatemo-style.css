@@ -642,3 +642,12 @@ footer a:hover {
 .g-recaptcha {
   margin-bottom: 2rem;
 }
+
+/*Redirect link*/
+.redirect-link {
+  color: var(--orange);
+  text-decoration: underline;
+}
+.redirect-link:hover {
+  color: #e64ce6;
+}
