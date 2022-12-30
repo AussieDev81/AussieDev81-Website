@@ -1,6 +1,30 @@
+//A collection of all pages in the site, with their filename and short name
+const SITE_LINKS = [
+	{filename: "/", shortName: "Home"},
+	{filename: "about.html", shortName: "About"},
+	{filename: "portfolio.html", shortName: "Portfolio"},
+	{filename: "blog.html", shortName: "Blog"},
+	{filename: "contact.html", shortName: "Contact"},
+]
+
+
+/**
+ * Get the name of the page being viewed
+ * @returns The name of the current page ("Home" for index.html) minus the ".html" file extension
+ */
+let currentPage = () => {
+	let name = location.pathname.split("/").pop();
+
+	if(name == "") name = "Home"
+	else if(name.includes(".html")) name = name.replace(".html", "");
+
+	return name;
+}
+
+
 // Main navigation bar
-const navContent = (page) => {
-	return `
+const navContent = (pageName) => {
+	let content = `
 	    <div class="navbar navbar-default navbar-static-top" role="navigation">
 			<div class="navbar-header">
 				<button class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
@@ -11,15 +35,18 @@ const navContent = (page) => {
 				<a href="/" class="navbar-brand"><span>AussieDev81</span></a>
 			</div>
 			<div class="collapse navbar-collapse">
-				<ul class="nav navbar-nav navbar-right">
-					<li><a href="/" 	 ${page.toUpperCase() === "HOME" ? 'class="active"' : ""} 	   >HOME</a></li>
-					<li><a href="about" 	 ${page.toUpperCase() === "ABOUT" ? 'class="active"' : ""}	   >ABOUT</a></li>
-					<li><a href="https://projects.aussiedev81.com" >PORTFOLIO</a></li>
-					<li><a href="contact" 	 ${page.toUpperCase() === "CONTACT" ? 'class="active"' : ""}   >CONTACT</a></li>
-				</ul>
-			</div>
+				<ul class="nav navbar-nav navbar-right">`;
+
+	SITE_LINKS.forEach((link) => {
+		content += `<li><a href="${link.filename}" ${link.shortName.toUpperCase() === currentPage().toUpperCase() ? 'class="active"' : ""}>${link.shortName}</a></li>`;
+	});
+
+	content += `
+			</ul>
 		</div>
-	`;
+	</div>`;
+
+	return content;
 };
 
 
@@ -117,10 +144,11 @@ const copyrightContent = () => {
 	`;
 };
 
+
 //Site footer
 const footerContent = () => {
-	return `
-	    <div class="container">
+	let content = `
+	<div class="container">
 			<div class="row">
 
 				<div class="col-md-4 col-sm-6">
@@ -131,14 +159,14 @@ const footerContent = () => {
 
 				<div class="col-md-4 col-sm-6">
 					<h3>Menu</h3>
-					<p><a href="/">Home</a></p>
-					<p><a href="/about">About</a></p>
-					<p><a href="https://projects.aussiedev81.com/">Portfolio</a></p>
-					<p><a href="/contact">Contact</a></p>
-					<p><a href="https://projects.aussiedev81.com/">Project Portal</a></p>
-					<p><a href="https://projects.aussiedev81.com/projects">Projects</a></p>
-					<p><a href="https://projects.aussiedev81.com/boredom">Boredom Busters</a></p>
-				</div>
+	`;
+
+	SITE_LINKS.forEach((link) => {
+		content += `<p><a href="${link.filename}">${link.shortName}</a></p>`;
+	});
+
+	content += `
+	</div>
 
 				<div class="col-md-4 col-sm-6">
 					<h3>Useful Links</h3>
@@ -148,8 +176,9 @@ const footerContent = () => {
 				</div>
 
 			</div>
-		</div>
-	`;
+		</div>`;
+	
+	return content;
 };
 
 
