@@ -42,7 +42,7 @@ document.getElementsByTagName("title")[0].innerHTML = `${SITE_NAME} - ${capitali
 
 
 // Main navigation bar
-const navContent = (pageName) => {
+const navContent = () => {
 	let content = `
 	    <div class="navbar navbar-default navbar-static-top" role="navigation">
 			<div class="navbar-header">
