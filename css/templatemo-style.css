@@ -844,3 +844,87 @@ footer a:hover {
   font-size: medium;
   font-weight: normal;
 }
+
+/*Construction Banner*/
+.construction-banner {
+  display: flex;
+  max-width: max-content;
+  border-radius: 5px;
+  background-color: rgb(193 0 0 / 85%);
+  border-color: var(--white);
+  border-style: double;
+  box-shadow: 2px 2px 5px black;
+  margin-inline: auto;
+  margin-block: 2rem;
+  color: var(--white);
+  padding: 2rem;
+  text-align: center;
+  animation: shake 0.5s;
+  animation-iteration-count: 4;
+}
+
+@media (max-width: 550px) {
+  .construction-banner {
+    margin-inline: min(1rem);
+  }
+}
+
+@media (max-width: 350px) {
+  .construction-banner>h2 {
+    font-size: 2rem;
+  }
+}
+
+.construction-banner:hover {
+  cursor: default;
+}
+
+.construction-banner>h2 {
+  margin: 0;
+}
+
+@keyframes shake {
+  0% {
+    transform: translate(1px, 1px) rotate(0deg);
+  }
+
+  10% {
+    transform: translate(-1px, -2px) rotate(-1deg);
+  }
+
+  20% {
+    transform: translate(-3px, 0px) rotate(1deg);
+  }
+
+  30% {
+    transform: translate(3px, 2px) rotate(0deg);
+  }
+
+  40% {
+    transform: translate(1px, -1px) rotate(1deg);
+  }
+
+  50% {
+    transform: translate(-1px, 2px) rotate(-1deg);
+  }
+
+  60% {
+    transform: translate(-3px, 1px) rotate(0deg);
+  }
+
+  70% {
+    transform: translate(3px, 1px) rotate(-1deg);
+  }
+
+  80% {
+    transform: translate(-1px, -1px) rotate(1deg);
+  }
+
+  90% {
+    transform: translate(1px, 2px) rotate(0deg);
+  }
+
+  100% {
+    transform: translate(1px, -2px) rotate(-1deg);
+  }
+}

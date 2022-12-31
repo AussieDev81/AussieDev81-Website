@@ -217,3 +217,21 @@ window.onscroll = () => {
  * Returns to the top of the current page, using a smooth animation
  */
 const scrollUp = () => window.scrollTo({ top: 0, behavior: "smooth" });
+
+
+/**
+ * Insert a construction banner with custom message
+ * @param {*} parentId The id of the parent element for the banner to be inserted into
+ * @param {*} message The message to be displayed by the construction banner
+ */
+const constructionBanner = (parentId, message) => {
+	//Create a banner div with accessing class name
+	const banner = document.createElement("div");
+	banner.classList.add("construction-banner");
+
+	//Set the banner message content 
+	banner.innerHTML = message;
+
+	//Add the banner to the page #home element
+	document.getElementById(parentId).appendChild(banner);
+}
