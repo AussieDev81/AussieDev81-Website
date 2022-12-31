@@ -1,4 +1,17 @@
 const SITE_NAME = "AussieDev81";
+const SITE_EMAIL = "info@aussiedev81.com";
+const SITE_URL = "https://aussiedev81.com";
+const REPO_README = "https://api.github.com/repos/AussieDev81/AussieDev81-Website/readme";
+const REPOS = {
+	AussieDev81: "https://api.github.com/users/AussieDev81/repos",
+	nathansnow1981: "https://api.github.com/users/nathansnow1981/repos",
+};
+const SOCIAL_LINKS = [
+	{ description: "GitHub social link", icon: "fa-brands fa-github", link: "https://github.com/AussieDev81" },
+	{ description: "Twitter social link", icon: "fa-brands fa-twitter", link: "https://twitter.com/AussieDev81" },
+	{ description: "Discord social link", icon: "fa-brands fa-discord", link: "https://discord.gg/vXus9NrC3P" },
+	{ description: "Email link", icon: "fa fa-envelope", link: "mailto:info@aussiedev81.com&subject=Enquiry" },
+ ];
 
 //A collection of all pages in the site, with their filename and short name
 const SITE_LINKS = [
@@ -44,35 +57,60 @@ document.getElementsByTagName("title")[0].innerHTML = `${SITE_NAME} - ${capitali
 // Main navigation bar
 const navContent = () => {
 	let content = `
-	    <div class="navbar navbar-default navbar-static-top" role="navigation">
-			<div class="navbar-header">
-				<button class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-					<span class="icon icon-bar"></span>
-					<span class="icon icon-bar"></span>
-					<span class="icon icon-bar"></span>
+	    <nav class="nav-bar">
+			<div class="brand">
+				<a href="/">${SITE_NAME}</a>
+				<!--Toggle Button-->
+				<button class="nav-toggle" id="nav-toggler" >
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
 				</button>
-				<a href="/" class="navbar-brand"><span>AussieDev81</span></a>
 			</div>
-			<div class="collapse navbar-collapse">
-				<ul class="nav navbar-nav navbar-right">`;
+			<div class="menu" id="nav-menu">
+				<ul>
+				`;
 
 	SITE_LINKS.forEach((link) => {
-		content += `<li><a href="${link.filename}" ${link.shortName.toUpperCase() === currentPage().toUpperCase() ? 'class="active"' : ""}>${link.shortName}</a></li>`;
+		content += `<li>
+			<a href="${link.filename}" 
+			class="nav-item ${link.shortName.toUpperCase() === currentPage().toUpperCase() ? 'active' : ''}">
+			${link.shortName}
+			</a>
+		</li>`;
 	});
 
 	content += `
 			</ul>
 		</div>
-	</div>`;
-
+	</nav>`;
 	return content;
+};
+
+
+const navToggle = () => {
+	const navToggler = document.getElementById("nav-toggler");
+	let menu = document.getElementById("nav-menu");
+
+	const showMenu = () => (menu.style.display = "block");
+	const hideMenu = () => (menu.style.display = "none");
+	const toggleMenu = () => (getComputedStyle(menu).display == "none"? showMenu() : hideMenu());
+
+	navToggler.addEventListener("click", () => {
+		toggleMenu();
+	})
+
+	//Detect mouse clicks outside the dropdown menu
+	// window.addEventListener("click", () => {
+	// 	hideMenu();
+	// });
 };
 
 
 /**
  * Fetches the README document from GitHub repository and shows the current stats for both AussieDev81 and nathansnow1981 accounts
  */
-const fetchReadme = () => fetch("https://api.github.com/repos/AussieDev81/AussieDev81-Website/readme", {
+const fetchReadme = () => fetch(REPO_README, {
 	accept: "application/vnd.github.html+json",
 })
 	.then((response) => response.json())
@@ -87,8 +125,8 @@ const fetchReadme = () => fetch("https://api.github.com/repos/AussieDev81/Aussie
  */
 const fetchTopFiveRepos = async () => {
 	//Define both GitHub repository api calls
-	let ad81Data = await fetch("https://api.github.com/users/AussieDev81/repos");
-	let ns1981Data = await fetch("https://api.github.com/users/nathansnow1981/repos");
+	let ad81Data = await fetch(REPOS.AussieDev81);
+	let ns1981Data = await fetch(REPOS.nathansnow1981);
 
 	//Call both APIs asynchronously
 	Promise.all([ad81Data, ns1981Data])
@@ -140,28 +178,31 @@ const fetchTopFiveRepos = async () => {
 
 //Copyright notice
 const copyrightContent = () => {
-	return `
+	
+	let content = `
 	    <div class="container">
 			<div class="row">
 				<div class="col-md-6 col-sm-6">
 					<p>Copyright &copy; 
-						${new Date().getFullYear()} - AussieDev81 - All Rights Reserved
+						${new Date().getFullYear()} - ${SITE_NAME} - All Rights Reserved
 					</p>
 				</div>
 				<div class="col-md-6 col-sm-6">
-					<ul class="social-icons">
-						<li><a href="https://github.com/AussieDev81" class="fa-brands fa-github" aria-label="GitHub social link" target="_blank"></a></li>
-						<li><a href="https://twitter.com/AussieDev81" class="fa-brands fa-twitter" aria-label="Twitter social link" target="_blank"></a></li>
-						<li><a href="https://www.youtube.com/channel/UCfzYf3DeS6W2hpgXqniOjqQ"
-								class="fa-brands fa-youtube" aria-label="YouTube social link" target="_blank"></a></li>
-						<li><a href="https://discord.gg/vXus9NrC3P" class="fa-brands fa-discord" aria-label="Discord social link" target="_blank"></a></li>
-						<li><a href="mailto:info@aussiedev81.com&subject=Enquiry" class="fa fa-envelope" aria-label="Email link" target="_blank"></a></li>
+					<ul class="social-icons">`;
+	
+					SOCIAL_LINKS.forEach((social) => {
+						content += `<li><a href="${social.link}" class="${social.icon}" aria-label="${social.description}" target="_blank"></a></li>`
+					});
+
+					content += `
 					</ul>
 				</div>
 			</div>
 		</div>
 	`;
+	return content;
 };
+ 
 
 
 //Site footer
@@ -171,9 +212,9 @@ const footerContent = () => {
 			<div class="row">
 
 				<div class="col-md-4 col-sm-6">
-					<h3>AussieDev81</h3>
-					<p><i class="fa fa-envelope-o"></i> info@aussiedev81.com</p>
-					<p><i class="fa fa-globe"></i> www.aussiedev81.com</p>
+					<h3>${SITE_NAME}</h3>
+					<p><i class="fa fa-envelope-o"></i> ${SITE_EMAIL}</p>
+					<p><i class="fa fa-globe"></i> ${SITE_URL}</p>
 				</div>
 
 				<div class="col-md-4 col-sm-6">
