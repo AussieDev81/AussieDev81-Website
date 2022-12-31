@@ -87,6 +87,13 @@ h2 {
     background-color: var(--bg-light);
 }
 
+.flex {
+    display: flex;
+    flex-wrap: wrap;
+    text-align: center;
+    width: 100%;
+}
+
 /* ============== NAVBAR ============== */
 .nav-bar {
     display: flex;
@@ -299,6 +306,9 @@ tr:nth-child(even) {
     position: relative;
     bottom: 40px;
     transition: all 0.4s ease-in;
+    height: 100%;
+    width: 320px;
+    margin: auto;
 }
 
 .divider .divider-wrapper:hover {
@@ -406,6 +416,7 @@ tr:nth-child(even) {
 #team .team-wrapper {
     border: 2px solid #303030;
     padding: 20px;
+    height: 100%;
 }
 
 #team h4 {
