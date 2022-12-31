@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-	<title>Home</title>
+	<title></title>
 
 	<!-- Site icons -->
 	<link rel="icon" href="/images/favicon.ico" type="image/x-icon">
@@ -35,9 +35,7 @@
 
 	<!-- Styling -->
 	<link rel="stylesheet" href="css/bootstrap.min.css">
-	<link rel="stylesheet" href="css/nivo-lightbox.css">
-	<link rel="stylesheet" href="css/nivo_themes/default/default.css">
-	<link rel="stylesheet" href="css/templatemo-style.css">
+	<link rel="stylesheet" href="css/style.css">
 	<link rel="stylesheet" href='http://fonts.googleapis.com/css?family=Montserrat:400,700' type='text/css'>
 
 	<!-- JavaScript dependencies -->
@@ -108,14 +106,13 @@
 	<script type="text/javascript">emailjs.init('oKjtk3d35PlskoYhd')</script>
 	<script src="js/jquery.js"></script>
 	<script src="js/bootstrap.min.js"></script>
-	<script src="js/nivo-lightbox.min.js"></script>
-	<script src="js/custom.js"></script>
 	<script src="js/components.js"></script>
 
 	<script type="text/javascript">
-		document.getElementById("navigation").innerHTML = navContent("Contact");
+		document.getElementById("navigation").innerHTML = navContent();
 		document.getElementById("footer").innerHTML = footerContent();
 		document.getElementById("copyright").innerHTML = copyrightContent();
+		navToggle();
 	</script>
 
 	<script>
