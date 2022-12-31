@@ -1,3 +1,5 @@
+const SITE_NAME = "AussieDev81";
+
 //A collection of all pages in the site, with their filename and short name
 const SITE_LINKS = [
 	{filename: "/", shortName: "Home"},
@@ -20,6 +22,23 @@ let currentPage = () => {
 
 	return name;
 }
+
+
+/**
+ * Capitalize the first letter in a word
+ * @param {*} word The word to be capitalized
+ * @returns A word with the first letter in uppercase, and the remainder of the word in its original form
+ */
+const capitalizeWord = (word) => {
+	return word[0].toUpperCase() + word.substring(1);
+};
+
+
+/**
+ * Rewrite the page title dynamically
+ */
+document.getElementsByTagName("title")[0].innerHTML = `${SITE_NAME} - ${capitalizeWord(currentPage())}`;
+
 
 
 // Main navigation bar
