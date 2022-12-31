@@ -65,7 +65,7 @@
 					<h2>Aussie Software Engineer</h2>
 					<p>
 						I am a
-						<script>document.write(new Date().getFullYear() - new Date(1981, 5, 29).getFullYear())</script>
+						<script>document.write(Math.abs(new Date(Date.now() - new Date(1981, 4, 29).getTime()).getUTCFullYear() - 1970))</script>
 						year old Australian Software
 						Engineer living in sunny Queensland.
 					</p>
