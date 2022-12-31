@@ -2,7 +2,7 @@
 const SITE_LINKS = [
 	{filename: "/", shortName: "Home"},
 	{filename: "about.html", shortName: "About"},
-	{filename: "portfolio.html", shortName: "Portfolio"},
+	{filename: "projects.html", shortName: "Projects"},
 	{filename: "blog.html", shortName: "Blog"},
 	{filename: "contact.html", shortName: "Contact"},
 ]
