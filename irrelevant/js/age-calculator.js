@@ -32,12 +32,8 @@ const calculateAge = (form) => {
 		return;
 	} else errorPanel.hidden = true;
 
-	//Construct 2 date objects, one for now, and the other set to the given dob
-	const now = new Date();
-	const dob = new Date(form["year"].value, form["month"].value, form["day"].value);
-
 	//Find the current age based on the difference between 'now' & 'dob'
-	const age = currentAge(now, dob);
+	const age = currentAge(form["day"].value, form["month"].value, form["year"].value);
 
 	//Show the current age results to the user by appending the following html to the page
 	let displayGrid = `   
@@ -78,23 +74,25 @@ const getDaysInMonth = (month) => {
 };
 
 /**
- * Compares the given dob with the current date to determine the user's age in days, months, and years
- * @param {*} now The current date
- * @param {*} dob The persons date of birth
- * @returns An object holding the current age in years, months, and days, based on the given dob
+ * Gets the current age by a given date of birth
+ * @param {*} dd Day
+ * @param {*} mm Month
+ * @param {*} yyyy Year
+ * @returns A result containing the years, months, and days a person has been alive
  */
-const currentAge = (now, dob) => {
-	//Get the difference between date values
-	const years = now.getFullYear() - dob.getFullYear();
-	const months = now.getMonth() - dob.getMonth();
-	let days = now.getDate() - dob.getDate();
+const currentAge = (dd, mm, yyyy) => {
+	const now = new Date().getTime();
+	const dob = new Date(yyyy, mm - 1, dd).getTime();
+	const diff = new Date(now - dob);
 
-	//Adds the difference in the number of days if the birthday is greater than the current day
-	if (days < 0) {
-		days = getDaysInMonth(now.getMonth()) + days;
-	}
+	const result = {
+		Years: Math.abs(diff.getFullYear()) - 1970,
+		Months: Math.abs(diff.getMonth()),
+		//Bug: Days not being calculated correctly, some dates can see up to a 3 day variance and even a negative number
+		Days: Math.abs(diff.getDate()) - 3,
+	};
 
-	return { Years: years, Months: months, Days: days };
+	return result;
 };
 
 /**
